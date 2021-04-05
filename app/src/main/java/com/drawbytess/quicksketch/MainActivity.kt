@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         drawing_view.setSizeForBrush(20.toFloat())
 
         // Calls functionality for brush size
-        ib_brush.setOnClickListener{
+        ib_brush_size.setOnClickListener{
             showBrushSizeChooseDialog()
         }
     }

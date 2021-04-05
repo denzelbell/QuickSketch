@@ -3,21 +3,33 @@ package com.drawbytess.quicksketch
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
+import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
 
 
 class MainActivity : AppCompatActivity() {
+    private var mImageButtonCurrentPaint: ImageButton? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         drawing_view.setSizeForBrush(20.toFloat())
 
+        // Color Select
+        mImageButtonCurrentPaint = ll_paint_colors_1[0] as ImageButton
+        mImageButtonCurrentPaint!!.setImageDrawable(
+                ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
+        )
+
         // Calls functionality for brush size
         ib_brush_size.setOnClickListener{
             showBrushSizeChooseDialog()
         }
+
     }
 
     // Sets the paint brush pop up
@@ -60,4 +72,5 @@ class MainActivity : AppCompatActivity() {
 
         brushDialog.show()
     }
+
 }

@@ -2,7 +2,6 @@ package com.drawbytess.quicksketch
 
 import android.content.Context
 import android.graphics.*
-import android.graphics.drawable.BitmapDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.MotionEvent
@@ -101,9 +100,16 @@ class DrawingView(context: Context, attrs: AttributeSet): View(context, attrs) {
         mDrawPaint!!.strokeWidth = mBrushSize
     }
 
+    // Pulls string values from colors.xml and converts to intended color
+    // for color pallet
+    fun setColor(newColor: String){
+        color = Color.parseColor(newColor) // parseColor is what reads the string
+        mDrawPaint!!.color = color
+    }
+
     internal inner class CustomPath(var color: Int,
                                     var brushThickness: Float): Path(){
-
     }
+
 
 }

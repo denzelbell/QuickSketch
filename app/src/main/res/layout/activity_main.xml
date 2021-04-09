@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/orange"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -97,20 +98,9 @@
                 android:layout_margin="2dp"
                 android:onClick="paintClicked"
                 android:contentDescription="color_pallet"
-                android:background="@color/blue"
+                android:background="@color/orange"
                 android:src="@drawable/pallet_normal"
-                android:tag="@color/blue"
-                />
-
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="2dp"
-                android:onClick="paintClicked"
-                android:contentDescription="color_pallet"
-                android:background="@color/green"
-                android:src="@drawable/pallet_normal"
-                android:tag="@color/green"
+                android:tag="@color/orange"
                 />
 
             <ImageButton
@@ -130,42 +120,9 @@
                 android:layout_margin="2dp"
                 android:onClick="paintClicked"
                 android:contentDescription="color_pallet"
-                android:background="@color/cream"
+                android:background="@color/blue"
                 android:src="@drawable/pallet_normal"
-                android:tag="@color/cream"
-                />
-
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="2dp"
-                android:onClick="paintClicked"
-                android:contentDescription="color_pallet"
-                android:background="@color/orange"
-                android:src="@drawable/pallet_normal"
-                android:tag="@color/orange"
-                />
-
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="2dp"
-                android:onClick="paintClicked"
-                android:contentDescription="color_pallet"
-                android:background="@color/purple_700"
-                android:src="@drawable/pallet_normal"
-                android:tag="@color/purple_700"
-                />
-
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="2dp"
-                android:onClick="paintClicked"
-                android:contentDescription="color_pallet"
-                android:background="@color/brown"
-                android:src="@drawable/pallet_normal"
-                android:tag="@color/brown"
+                android:tag="@color/blue"
                 />
 
             <ImageButton
@@ -179,8 +136,49 @@
                 android:tag="@color/sky_blue"
                 />
 
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:onClick="paintClicked"
+                android:contentDescription="color_pallet"
+                android:background="@color/green"
+                android:src="@drawable/pallet_normal"
+                android:tag="@color/green"
+                />
 
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:onClick="paintClicked"
+                android:contentDescription="color_pallet"
+                android:background="@color/cream"
+                android:src="@drawable/pallet_normal"
+                android:tag="@color/cream"
+                />
 
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:onClick="paintClicked"
+                android:contentDescription="color_pallet"
+                android:background="@color/purple_500"
+                android:src="@drawable/pallet_normal"
+                android:tag="@color/purple_500"
+                />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:onClick="paintClicked"
+                android:contentDescription="color_pallet"
+                android:background="@color/brown"
+                android:src="@drawable/pallet_normal"
+                android:tag="@color/brown"
+                />
 
         </LinearLayout>
 
@@ -203,7 +201,7 @@
             android:contentDescription="undo"
             android:scaleType="fitXY"
             android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#80ffffff"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -214,7 +212,7 @@
             android:contentDescription="brush_size"
             android:scaleType="fitXY"
             android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#80ffffff"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -225,7 +223,18 @@
             android:contentDescription="gallery"
             android:layout_margin="5dp"
             android:scaleType="fitXY"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#80ffffff"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ib_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_save"
+            android:contentDescription="download"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:backgroundTint="#80ffffff"
             />
 
     </LinearLayout>

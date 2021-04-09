@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.QuickSketch" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnSecondary</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/annie_use_your_telescope</item>
     </style>
 
     <style name="Theme.QuickSketch.NoActionBar">

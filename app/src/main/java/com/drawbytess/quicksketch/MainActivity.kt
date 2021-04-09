@@ -1,10 +1,13 @@
 package com.drawbytess.quicksketch
 
 import android.Manifest
+import android.app.Activity
 import android.app.Dialog
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.ContextMenu
 import android.view.View
 import android.widget.ImageButton
@@ -14,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,16 +36,51 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
         )
 
-        // Calls functionality for brush size
+        // Links brush size button with bush size functionality
         ib_brush_size.setOnClickListener{
             showBrushSizeChooseDialog()
         }
 
+        // Links gallery button with gallery functions
         ib_gallery.setOnClickListener {
             if(isReadStorageAllowed()){
+
                 // run code to get the image from gallery
+                val pickPhotoIntent = Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+
+                startActivityForResult(pickPhotoIntent, GALLERY)
+
             } else {
                 requestStoragePermission()
+            }
+        }
+
+        // Link undo button with undo function
+        ib_undo.setOnClickListener {
+            drawing_view.onClickUndo()
+        }
+    }
+
+    // Gets the photo from gallery
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK){
+            if (requestCode == GALLERY){
+                try {
+                    if (data!!.data != null){
+                        iv_background.visibility = View.VISIBLE // makes background image visible
+                        iv_background.setImageURI(data.data) // Sets image from users gallery
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Error in parsing the image or image file is corrupt",
+                            Toast.LENGTH_LONG)
+                            .show()
+                    }
+                } catch (e: Exception){
+                    e.printStackTrace()
+                }
             }
         }
     }
@@ -57,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                 ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
             )
             mImageButtonCurrentPaint!!.setImageDrawable(
-                ContextCompat.getDrawable(this, R.drawable.pallet_pressed))
+                ContextCompat.getDrawable(this, R.drawable.pallet_normal))
 
             mImageButtonCurrentPaint = view
         }
@@ -155,5 +194,6 @@ class MainActivity : AppCompatActivity() {
     // Codes for permissions
     companion object {
         private const val STORAGE_PERMISSION_CODE =1
+        private const val GALLERY = 2
     }
 }

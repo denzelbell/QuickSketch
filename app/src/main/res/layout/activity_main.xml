@@ -24,7 +24,6 @@
             android:id="@+id/iv_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/iv_background_cocomel"
             android:scaleType="centerCrop"
             />
 
@@ -195,6 +194,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ib_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_undo"
+            android:contentDescription="undo"
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ib_brush_size"

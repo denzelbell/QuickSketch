@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <FrameLayout
+        android:id="@+id/fl_draw_view_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="5dp"
@@ -22,10 +22,10 @@
 
         <ImageView
             android:id="@+id/iv_background"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/iv_background_cocomel"
+            android:scaleType="centerCrop"
             />
 
     <com.drawbytess.quicksketch.DrawingView
@@ -34,25 +34,18 @@
         android:layout_height="match_parent"
         android:background="#80ffffff"
         />
+
     </FrameLayout>
 
-
-    <LinearLayout
-        android:id="@+id/ll_paint_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/ll_paint_color"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
             android:orientation="horizontal"
-            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/ll_action_buttons"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_draw_view_container"
             >
 
             <ImageButton
@@ -85,7 +78,7 @@
                 android:contentDescription="color_pallet"
                 android:background="@color/grey"
                 android:src="@drawable/pallet_normal"
-                android:tag="@color/sky_blue"
+                android:tag="@color/grey"
                 />
 
             <ImageButton
@@ -189,7 +182,19 @@
 
 
 
+
         </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ib_brush_size"
@@ -202,8 +207,17 @@
             android:backgroundTint="@color/white"
             />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ib_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gallery"
+            android:contentDescription="gallery"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/white"
+            />
 
-
-</LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

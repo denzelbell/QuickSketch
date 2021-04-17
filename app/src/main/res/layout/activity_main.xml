@@ -202,7 +202,7 @@
             android:contentDescription="undo"
             android:scaleType="fitXY"
             android:layout_margin="5dp"
-            android:backgroundTint="#80ffffff"
+            android:backgroundTint="@color/white"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -213,7 +213,7 @@
             android:contentDescription="brush_size"
             android:scaleType="fitXY"
             android:layout_margin="5dp"
-            android:backgroundTint="#80ffffff"
+            android:backgroundTint="@color/white"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -224,7 +224,7 @@
             android:contentDescription="gallery"
             android:layout_margin="5dp"
             android:scaleType="fitXY"
-            android:backgroundTint="#80ffffff"
+            android:backgroundTint="@color/white"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -235,7 +235,7 @@
             android:contentDescription="download"
             android:layout_margin="5dp"
             android:scaleType="fitXY"
-            android:backgroundTint="#80ffffff"
+            android:backgroundTint="@color/white"
             />
 
     </LinearLayout>
